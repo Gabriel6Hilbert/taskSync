@@ -1,0 +1,16 @@
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Build
+/target/
+*.jar
+
+# Credenciais sensíveis
+src/main/resources/credentials.json
+tokens/StoredCredential
+
+# SO
+.DS_Store
+Thumbs.db
