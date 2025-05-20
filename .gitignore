@@ -1,0 +1,25 @@
+# IDEs
+.idea/
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Builds
+/target/
+/build/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+
+# Credenciais sensíveis
+src/main/resources/credentials.json
+tokens/
+*.env
+

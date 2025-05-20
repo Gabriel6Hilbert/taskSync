@@ -1,0 +1,158 @@
+.main-content h2 {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .card-tarefa {
+      border-left: 4px solid #1a73e8;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      padding: 1.25rem;
+      background-color: #fff;
+      border-radius: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+
+    .card-tarefa:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-tarefa .titulo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #1a73e8;
+    }
+
+    .card-tarefa .meta-info {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .card-tarefa .btn {
+      margin-right: 0.5rem;
+    }
+
+    .search-wrapper {
+      max-width: 50%;
+    }
+
+    .search-wrapper input {
+      border-radius: 0.375rem 0 0 0.375rem;
+    }
+
+    .search-wrapper button {
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+
+    .header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    table tbody tr.status-PENDENTE {
+      background-color: #f8dd86;
+    }
+
+    table tbody tr.status-CONCLUIDA {
+      background-color: #5bda78;
+    }
+
+    table tbody tr.status-ATRASADA {
+      background-color: #fd8791;
+    }
+
+    td button {
+      margin: 0 0.25rem;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+
+    .input-group input {
+      border-radius: 0.375rem 0 0 0.375rem;
+    }
+
+    .input-group .btn {
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+
+    td button {
+      margin: 0 0.25rem;
+    }
+
+    .table-container {
+    max-width: 85%;
+    margin: 0 auto;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container th,
+    .table-container td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #8bc5ff;
+    }
+
+    .table-container th {
+      background-color: #65b1fd;
+      font-weight: bold;
+    }
+    
+    .filtro-container {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+.filtro-select {
+  min-width: 200px;
+  max-width: 250px;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #ccc;
+  background-color: #f1f5fb;
+  color: #333;
+  transition: border-color 0.2s;
+}
+
+.filtro-select:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 0.15rem rgba(26, 115, 232, 0.25);
+}
+
+.search-wrapper {
+  flex-grow: 1;
+  min-width: 250px;
+  max-width: 100%;
+}
+
+.input-group .btn {
+  background-color: #1a73e8;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.input-group .btn:hover {
+  background-color: #155cb0;
+}
+
+@media (max-width: 768px) {
+  .filtro-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-select {
+    width: 100%;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+}
+

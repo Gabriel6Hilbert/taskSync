@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerenciar Tarefas - TaskSync</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/assets/css/sidebar.css" />
+  <link rel="stylesheet" href="/assets/css/manager.css" />
+</head>
+<body>
+  <div class="modal fade" id="modalEditarTarefa" tabindex="-1" aria-labelledby="modalEditarTarefaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="formEditarTarefa">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarTarefaLabel">Editar Tarefa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body row g-3">
+          <input type="hidden" id="editId">
+          <div class="col-md-6">
+            <label for="editDescricao" class="form-label">Descrição</label>
+            <input type="text" class="form-control" id="editDescricao" required>
+          </div>
+          <div class="col-md-6">
+            <label for="editPrioridade" class="form-label">Prioridade</label>
+            <select class="form-select" id="editPrioridade" required>
+              <option value="BAIXA">Baixa</option>
+              <option value="MEDIA">Média</option>
+              <option value="ALTA">Alta</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="editStatus" class="form-label">Status</label>
+            <select class="form-select" id="editStatus" required>
+              <option value="PENDENTE">Pendente</option>
+              <option value="CONCLUIDA">Concluída</option>
+              <option value="ATRASADA">Atrasada</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="editData" class="form-label">Data</label>
+            <input type="datetime-local" class="form-control" id="editData" required>
+          </div>
+          <div class="col-md-6">
+            <label for="editAlerta" class="form-label">Alerta</label>
+            <input type="datetime-local" class="form-control" id="editAlerta">
+          </div>
+          <div class="col-md-6">
+            <label for="editObservacoes" class="form-label">Observação</label>
+            <input type="text" class="form-control" id="editObservacoes" required>
+          </div>
+          <div class="col-12" id="googleCalendarLinkContainer" style="display: none;">
+            <label class="form-label">Evento no Google Calendar:</label>
+            <div>
+              <a href="#" target="_blank" id="googleCalendarLink" class="link-primary text-break"></a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="d-flex">
+   <aside class="sidebar">
+    <div class="logo mb-4">
+      <h3>📋 TaskSync</h3>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">🏠 Início</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="createTask.html">📝 Nova Tarefa</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="managerTask.html">📁 Gerenciar Tarefas</a>
+      </li>
+    </ul>
+  </aside>
+
+</div>
+
+<div class="container mt-4">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3 filtro-container px-3">
+  <div class="input-group search-wrapper flex-grow-1">
+    <input type="text" id="inputBusca" class="form-control" placeholder="Buscar por descrição, status, prioridade...">
+    <button class="btn btn-primary" type="button">
+      <i class="bi bi-search"></i>
+    </button>
+  </div>
+
+  <select id="filtroStatus" class="form-select filtro-select">
+    <option value="">Filtrar por Status</option>
+    <option value="PENDENTE">Pendente</option>
+    <option value="CONCLUIDA">Concluída</option>
+    <option value="ATRASADA">Atrasada</option>
+  </select>
+
+  <select id="filtroPrioridade" class="form-select filtro-select">
+    <option value="">Filtrar por Prioridade</option>
+    <option value="BAIXA">Baixa</option>
+    <option value="MEDIA">Média</option>
+    <option value="ALTA">Alta</option>
+  </select>
+</div>
+
+
+
+  <div class="table-container mx-auto">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover text-center align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Descrição</th>
+            <th>Prioridade</th>
+            <th>Status</th>
+            <th>Data</th>
+            <th>Alerta</th>
+            <th>Observações</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tarefasContainer">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/manager.js"></script>
+</body>
+</html>
