@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class TaskService {
-
+//release v2.0.0
     private final GoogleCalendarService googleCalendarService;
     private final TaskRepository repository;
 

@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "task_init")
 public class Task {
+//release v2.0.0
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
