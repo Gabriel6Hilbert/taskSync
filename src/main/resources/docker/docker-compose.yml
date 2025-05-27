@@ -19,3 +19,5 @@ services:
 networks:
   api_tasksync_net:
     driver: bridge
+
+# docker composer 
